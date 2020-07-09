@@ -61,10 +61,11 @@
                                 <td>{{ item.title }}</td>
                                 <td>
                                     <!-- 用v-bind綁定樣式來調整甜度的進度條 -->
+
                                     <div class="progress">
                                         <div class="progress-bar bg-warning" role="progressbar"
-                                            :style="{width:item.sugar.percent}" aria-valuenow="25" aria-valuemin="0"
-                                            aria-valuemax="100">{{item.sugar.value}}度</div>
+                                            :style="{width:item.sugarValue}" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{item.sugar}}度</div>
                                     </div>
 
                                 </td>
@@ -82,8 +83,7 @@
                                             @click="openModal('edit',item)">編輯</button>
                                         <button type="button" class="btn btn-outline-danger"
                                             @click="openModal('delete',item)">刪除</button>
-                                        <!-- <button type="button" class="btn btn-outline-info"
-                                            @click="openModal('message',item)">評價</button> -->
+
                                     </div>
                                 </td>
                             </tr>
@@ -123,7 +123,7 @@
                                         <div class="form-group col-md-3">
                                             <label for="inputSugar">甜度</label>
                                             <input type="number" min="0" max="20" class="form-control" id="inputSugar"
-                                                placeholder="請輸入甜度" v-model="tempData.sugar.value">
+                                                placeholder="請輸入甜度" v-model="tempData.sugar">
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -197,7 +197,7 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
 
     </section>
