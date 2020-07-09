@@ -34,7 +34,7 @@ var app = new Vue({
 
             }
         ],
-        tempData: [], //暫存要處理的商品資料
+        tempData: {}, //暫存要處理的商品資料
 
     },
     methods: {
@@ -77,15 +77,15 @@ var app = new Vue({
                 })
             } else { //沒有，就新增push
                 const id = new Date().getTime();
-                let sugar = this.tempData.sugar;
-
-                function percent(sugar) {
-                    let total = 20;
-                    let num = Math.round(sugar / total * 100) + "%";
-                    return num //整數百分比
-                };
-                let value = percent(sugar);
-                this.tempData.sugarValue = value;
+                //改在HTML上做計算
+                // let sugar = this.tempData.sugar;
+                // function percent(sugar) {
+                //     let total = 20;
+                //     let num = Math.round(sugar / total * 100) + "%";
+                //     return num //整數百分比
+                // };
+                // let value = percent(sugar);
+                // this.tempData.sugarValue = value;
                 this.tempData.id = id;
                 this.products.push(this.tempData);
 
