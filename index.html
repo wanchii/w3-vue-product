@@ -63,9 +63,10 @@
                                     <!-- 用v-bind綁定樣式來調整甜度的進度條 -->
                                     <div class="progress">
                                         <div class="progress-bar bg-warning" role="progressbar"
-                                            :style="{width:item.sugarValue}" aria-valuenow="25" aria-valuemin="0"
-                                            aria-valuemax="100">{{item.sugar}}度</div>
+                                            :style="{width: progress(item)}" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{item.sugar.value}}度</div>
                                     </div>
+                                
 
                                 </td>
                                 <td class="text-right">{{ item.origin_price}}</td>
@@ -123,7 +124,8 @@
                                         <div class="form-group col-md-3">
                                             <label for="inputSugar">甜度</label>
                                             <input type="number" min="0" max="20" class="form-control" id="inputSugar"
-                                                placeholder="請輸入甜度" v-model="tempData.sugar">
+                                                placeholder="請輸入甜度" v-model="tempData.sugar.value">
+                                            
                                         </div>
                                     </div>
                                     <div class="form-row">
